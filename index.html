@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مسابقه SolidWorks</title>
+
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Vazir',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:30px;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-box{
+width:70px;
+height:70px;
+border-radius:20px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#2563eb;
+font-weight:bold;
+font-size:1.5rem;
+}
+
+.hero{
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:2.2;
+color:#cbd5e1;
+max-width:800px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 35px;
+border:none;
+border-radius:18px;
+cursor:pointer;
+font-size:1rem;
+font-family:'Vazir';
+font-weight:bold;
+transition:.3s;
+}
+
+.primary{
+background:#2563eb;
+color:white;
+}
+
+.secondary{
+background:white;
+color:#0f172a;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+.card p{
+line-height:2;
+color:#cbd5e1;
+}
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.7);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:999;
+}
+
+.modal-content{
+background:white;
+color:#111827;
+width:100%;
+max-width:700px;
+border-radius:28px;
+padding:35px;
+max-height:90vh;
+overflow-y:auto;
+}
+
+.modal h2{
+margin-bottom:20px;
+color:#2563eb;
+}
+
+.rules{
+line-height:2.4;
+padding-right:20px;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+.form-group input{
+width:100%;
+padding:15px;
+border-radius:12px;
+border:1px solid #d1d5db;
+font-family:'Vazir';
+}
+
+.success{
+display:none;
+background:#16a34a;
+padding:15px;
+border-radius:12px;
+margin-top:20px;
+color:white;
+text-align:center;
+line-height:2;
+}
+
+.error{
+display:none;
+background:#dc2626;
+padding:15px;
+border-radius:12px;
+margin-top:20px;
+color:white;
+text-align:center;
+line-height:2;
+}
+
+footer{
+margin-top:80px;
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">
+
+<div class="logo-box">
+UMA
+</div>
+
+<div>
+<h2>انجمن علمی ساخت و تولید</h2>
+<p>دانشگاه محقق اردبیلی</p>
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>مسابقه سالانه SolidWorks</h1>
+
+<p>
+ثبت‌نام مسابقه تخصصی طراحی سه‌بعدی SolidWorks
+ویژه دانشجویان دانشکده فنی و مهندسی
+دانشگاه محقق اردبیلی
+</p>
+
+<div class="buttons">
+
+<button class="btn primary" onclick="openRules()">
+📜 قوانین مسابقه
+</button>
+
+<button class="btn secondary" onclick="openRegister()">
+📝 ثبت‌نام در مسابقه
+</button>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>تاریخ برگزاری</h3>
+<p>
+۲۵ اردیبهشت ۱۴۰۴
+ساعت ۱۴ تا ۱۷
+</p>
+</div>
+
+<div class="card">
+<h3>محل برگزاری</h3>
+<p>
+سالن کامپیوتر دانشکده فنی و مهندسی
+</p>
+</div>
+
+<div class="card">
+<h3>جوایز مسابقه</h3>
+<p>
+تندیس مسابقه، کارت هدیه
+و گواهی معتبر
+</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<div class="modal" id="rulesModal">
+
+<div class="modal-content">
+
+<h2>قوانین مسابقه</h2>
+
+<ul class="rules">
+
+<li>زمان برگزاری مسابقه: ۲۵ اردیبهشت ۱۴۰۴، ساعت ۱۴ تا ۱۷</li>
+<li>مهلت ثبت‌نام: حداکثر تا ۲۰ اردیبهشت ۱۴۰۴</li>
+<li>محل برگزاری: سالن کامپیوتر دانشکده فنی و مهندسی</li>
+<li>شرایط شرکت: داشتن دانش مقدماتی SolidWorks و همراه داشتن کارت دانشجویی</li>
+<li>نرم‌افزار مورد استفاده: SolidWorks 2023</li>
+<li>جوایز: تندیس مسابقه، کارت هدیه و گواهی معتبر</li>
+<li>رعایت اخلاق حرفه‌ای و عدم تقلب الزامی است</li>
+
+</ul>
+
+<br>
+
+<button class="btn primary" onclick="closeRules()">
+بستن
+</button>
+
+</div>
+
+</div>
+
+<div class="modal" id="registerModal">
+
+<div class="modal-content">
+
+<h2>فرم ثبت‌نام</h2>
+
+<form id="registerForm">
+
+<div class="form-group">
+<label>نام و نام خانوادگی</label>
+<input type="text" id="fullname" required>
+</div>
+
+<div class="form-group">
+<label>شماره دانشجویی</label>
+<input type="number" id="studentId" required>
+</div>
+
+<div class="form-group">
+<label>کد ملی</label>
+<input type="number" id="nationalId" required>
+</div>
+
+<button type="submit" class="btn primary">
+ارسال ثبت‌نام
+</button>
+
+</form>
+
+<div class="success" id="successMessage">
+ثبت‌نام با موفقیت به تلگرام ارسال شد ✅
+</div>
+
+<div class="error" id="errorMessage">
+ارسال انجام نشد ❌
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© انجمن علمی ساخت و تولید | دانشگاه محقق اردبیلی
+</footer>
+
+<script>
+
+function openRules(){
+document.getElementById("rulesModal").style.display="flex";
+}
+
+function closeRules(){
+document.getElementById("rulesModal").style.display="none";
+}
+
+function openRegister(){
+document.getElementById("registerModal").style.display="flex";
+}
+
+window.onclick = function(event){
+
+let rules = document.getElementById("rulesModal");
+let register = document.getElementById("registerModal");
+
+if(event.target == rules){
+rules.style.display="none";
+}
+
+if(event.target == register){
+register.style.display="none";
+}
+
+}
+
+document.getElementById("registerForm")
+.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+let fullname =
+document.getElementById("fullname").value;
+
+let studentId =
+document.getElementById("studentId").value;
+
+let nationalId =
+document.getElementById("nationalId").value;
+
+let message = `
+📌 ثبت‌نام جدید مسابقه SolidWorks
+
+👤 نام:
+${fullname}
+
+🎓 شماره دانشجویی:
+${studentId}
+
+🆔 کد ملی:
+${nationalId}
+`;
+
+try {
+
+const response = await fetch(
+"https://api.telegram.org/bot8815073906:AAFvmDlrMyjXI410uC6jiC5i2SYkQw1sEcE/sendMessage",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+chat_id:"5469088884",
+text:message
+})
+}
+);
+
+if(response.ok){
+
+document.getElementById("successMessage")
+.style.display="block";
+
+document.getElementById("errorMessage")
+.style.display="none";
+
+document.getElementById("registerForm")
+.reset();
+
+}
+
+else {
+
+document.getElementById("errorMessage")
+.style.display="block";
+
+}
+
+}
+
+catch(error){
+
+document.getElementById("errorMessage")
+.style.display="block";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
