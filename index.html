@@ -3,480 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مسابقه SolidWorks</title>
-
-<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+<title>هوش مصنوعی و آینده مهندسی ساخت و تولید</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,sans-serif;
 }
 
 body{
-font-family:'Vazir',sans-serif;
-background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
-color:white;
-min-height:100vh;
-overflow-x:hidden;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:30px;
+    background:#0b1020;
+    color:#e6edf7;
+    line-height:2;
 }
 
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-border-bottom:1px solid rgba(255,255,255,.1);
+    min-height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    background:
+    radial-gradient(circle at top right,#00d4ff33,transparent 30%),
+    radial-gradient(circle at bottom left,#7c3aed33,transparent 30%),
+    #0b1020;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
+header h1{
+    font-size:2.4rem;
+    color:#00d4ff;
+    margin-bottom:20px;
 }
 
-.logo-box{
-width:70px;
-height:70px;
-border-radius:20px;
-background:white;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#2563eb;
-font-weight:bold;
-font-size:1.5rem;
+header p{
+    max-width:800px;
+    color:#cbd5e1;
 }
 
-.hero{
-text-align:center;
-padding:100px 20px;
-}
-
-.hero h1{
-font-size:4rem;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:1.1rem;
-line-height:2.2;
-color:#cbd5e1;
-max-width:800px;
-margin:auto;
-margin-bottom:40px;
-}
-
-.buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:18px 35px;
-border:none;
-border-radius:18px;
-cursor:pointer;
-font-size:1rem;
-font-family:'Vazir';
-font-weight:bold;
-transition:.3s;
-}
-
-.primary{
-background:#2563eb;
-color:white;
-}
-
-.secondary{
-background:white;
-color:#0f172a;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:50px;
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
 }
 
 .card{
-background:rgba(255,255,255,.05);
-padding:30px;
-border-radius:24px;
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
+    background:#12192f;
+    border:1px solid #22304f;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 0 20px rgba(0,212,255,.08);
 }
 
-.card h3{
-margin-bottom:15px;
+h2{
+    color:#00d4ff;
+    margin-bottom:15px;
 }
 
-.card p{
-line-height:2;
-color:#cbd5e1;
+ul{
+    padding-right:20px;
 }
 
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.7);
-display:none;
-justify-content:center;
-align-items:center;
-padding:20px;
-z-index:999;
-}
-
-.modal-content{
-background:white;
-color:#111827;
-width:100%;
-max-width:700px;
-border-radius:28px;
-padding:35px;
-max-height:90vh;
-overflow-y:auto;
-}
-
-.modal h2{
-margin-bottom:20px;
-color:#2563eb;
-}
-
-.rules{
-line-height:2.4;
-padding-right:20px;
-}
-
-.form-group{
-margin-bottom:20px;
-}
-
-.form-group label{
-display:block;
-margin-bottom:10px;
-font-weight:bold;
-}
-
-.form-group input{
-width:100%;
-padding:15px;
-border-radius:12px;
-border:1px solid #d1d5db;
-font-family:'Vazir';
-}
-
-.success{
-display:none;
-background:#16a34a;
-padding:15px;
-border-radius:12px;
-margin-top:20px;
-color:white;
-text-align:center;
-line-height:2;
-}
-
-.error{
-display:none;
-background:#dc2626;
-padding:15px;
-border-radius:12px;
-margin-top:20px;
-color:white;
-text-align:center;
-line-height:2;
+li{
+    margin-bottom:10px;
 }
 
 footer{
-margin-top:80px;
-padding:30px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-color:#94a3b8;
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
 }
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.5rem;
-}
-
-.btn{
-width:100%;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
 <header>
-
-<div class="logo">
-
-<div class="logo-box">
-UMA
-</div>
-
-<div>
-<h2>انجمن علمی ساخت و تولید</h2>
-<p>دانشگاه محقق اردبیلی</p>
-</div>
-
-</div>
-
+<h1>هوش مصنوعی، بازار کار و آینده مهندسی ساخت و تولید</h1>
+<p>
+آیا واقعاً شغلی وجود دارد که هوش مصنوعی نتواند جایگزین آن شود؟
+و آیا طراحان SolidWorks و مهندسان ساخت و تولید در آینده همچنان مورد نیاز خواهند بود؟
+</p>
 </header>
 
-<section class="hero">
-
-<h1>مسابقه سالانه SolidWorks</h1>
-
-<p>
-ثبت‌نام مسابقه تخصصی طراحی سه‌بعدی SolidWorks
-ویژه دانشجویان دانشکده فنی و مهندسی
-دانشگاه محقق اردبیلی
-</p>
-
-<div class="buttons">
-
-<button class="btn primary" onclick="openRules()">
-📜 قوانین مسابقه
-</button>
-
-<button class="btn secondary" onclick="openRegister()">
-📝 ثبت‌نام در مسابقه
-</button>
-
-</div>
-
-<div class="cards">
+<div class="container">
 
 <div class="card">
-<h3>تاریخ برگزاری</h3>
+<h2>مقدمه</h2>
+
 <p>
-۲۵ اردیبهشت ۱۴۰۴
-ساعت ۱۴ تا ۱۷
+در چند سال اخیر رشد هوش مصنوعی سرعتی کم‌سابقه پیدا کرده است.
+سیستم‌هایی که زمانی فقط قادر به انجام محاسبات ساده بودند،
+امروزه می‌توانند متن بنویسند، تصویر تولید کنند،
+کد برنامه‌نویسی بنویسند و حتی در بسیاری از وظایف فکری
+با انسان رقابت کنند.
+به همین دلیل بسیاری از افراد نگران آینده شغل خود هستند و
+این سؤال را مطرح می‌کنند که آیا هوش مصنوعی در نهایت
+تمام مشاغل را تصاحب خواهد کرد یا خیر.
 </p>
+
+<p>
+برای پاسخ به این سؤال باید ابتدا تفاوت بین
+«جایگزینی کامل یک شغل» و «خودکار شدن بخشی از وظایف آن شغل»
+را درک کنیم.
+در اغلب موارد هوش مصنوعی تمام یک حرفه را حذف نمی‌کند،
+بلکه بخشی از فعالیت‌های آن را سریع‌تر و ارزان‌تر انجام می‌دهد.
+</p>
+
 </div>
 
 <div class="card">
-<h3>محل برگزاری</h3>
+<h2>آیا شغلی وجود دارد که هوش مصنوعی نتواند جایگزین آن شود؟</h2>
+
 <p>
-سالن کامپیوتر دانشکده فنی و مهندسی
+اگر منظور از جایگزینی، حذف صد درصدی یک شغل باشد،
+پاسخ احتمالاً منفی است.
+تقریباً هر حرفه‌ای شامل فعالیت‌هایی است که قابلیت
+خودکار شدن دارند.
+اما اگر منظور این باشد که آیا برخی مشاغل برای مدت طولانی
+به حضور انسان نیاز خواهند داشت،
+پاسخ مثبت است.
 </p>
+
+<p>
+هوش مصنوعی در پردازش اطلاعات بسیار قدرتمند است،
+اما هنوز در زمینه‌هایی مانند مسئولیت‌پذیری،
+درک کامل شرایط واقعی،
+تعامل انسانی عمیق،
+مدیریت بحران‌های پیچیده،
+رهبری تیم‌ها و تصمیم‌گیری‌های چندبعدی
+محدودیت دارد.
+</p>
+
 </div>
 
 <div class="card">
-<h3>جوایز مسابقه</h3>
-<p>
-تندیس مسابقه، کارت هدیه
-و گواهی معتبر
-</p>
-</div>
+<h2>مشاغل مقاوم‌تر در برابر هوش مصنوعی</h2>
 
-</div>
-
-</section>
-
-</div>
-
-<div class="modal" id="rulesModal">
-
-<div class="modal-content">
-
-<h2>قوانین مسابقه</h2>
-
-<ul class="rules">
-
-<li>زمان برگزاری مسابقه: ۲۵ اردیبهشت ۱۴۰۴، ساعت ۱۴ تا ۱۷</li>
-<li>مهلت ثبت‌نام: حداکثر تا ۲۰ اردیبهشت ۱۴۰۴</li>
-<li>محل برگزاری: سالن کامپیوتر دانشکده فنی و مهندسی</li>
-<li>شرایط شرکت: داشتن دانش مقدماتی SolidWorks و همراه داشتن کارت دانشجویی</li>
-<li>نرم‌افزار مورد استفاده: SolidWorks 2023</li>
-<li>جوایز: تندیس مسابقه، کارت هدیه و گواهی معتبر</li>
-<li>رعایت اخلاق حرفه‌ای و عدم تقلب الزامی است</li>
-
+<ul>
+<li>مدیریت پروژه‌های پیچیده و صنعتی</li>
+<li>کارآفرینی و راه‌اندازی کسب‌وکار</li>
+<li>پژوهش و نوآوری علمی</li>
+<li>مهندسی سیستم‌های پیچیده</li>
+<li>مذاکره و مدیریت منابع انسانی</li>
+<li>جراحی‌های پیچیده و پزشکی تخصصی</li>
+<li>تعمیرات صنعتی پیشرفته در محیط واقعی</li>
+<li>رهبری سازمان‌ها و تصمیم‌گیری‌های استراتژیک</li>
 </ul>
 
-<br>
-
-<button class="btn primary" onclick="closeRules()">
-بستن
-</button>
-
-</div>
+<p>
+وجه مشترک این مشاغل آن است که تنها بر دانش فنی تکیه ندارند،
+بلکه به قضاوت انسانی، تجربه، مسئولیت و ارتباطات انسانی نیاز دارند.
+</p>
 
 </div>
 
-<div class="modal" id="registerModal">
+<div class="card">
+<h2>آینده مهندسی ساخت و تولید</h2>
 
-<div class="modal-content">
+<p>
+مهندسی ساخت و تولید از جمله رشته‌هایی است که
+به شدت تحت تأثیر هوش مصنوعی قرار خواهد گرفت،
+اما احتمال حذف کامل آن بسیار پایین است.
+کارخانه‌های آینده به سمت تولید هوشمند،
+رباتیک، اینترنت اشیا و تحلیل داده حرکت می‌کنند.
+در چنین شرایطی نیاز به مهندسانی که بتوانند
+فرآیندها را طراحی، کنترل و بهینه‌سازی کنند
+بیشتر از گذشته خواهد بود.
+</p>
 
-<h2>فرم ثبت‌نام</h2>
+<p>
+تفاوت اصلی این است که مهندس آینده باید علاوه بر دانش مکانیک،
+درک مناسبی از داده‌ها،
+اتوماسیون،
+برنامه‌نویسی صنعتی
+و ابزارهای هوش مصنوعی داشته باشد.
+</p>
 
-<form id="registerForm">
-
-<div class="form-group">
-<label>نام و نام خانوادگی</label>
-<input type="text" id="fullname" required>
 </div>
 
-<div class="form-group">
-<label>شماره دانشجویی</label>
-<input type="number" id="studentId" required>
+<div class="card">
+<h2>آیا هوش مصنوعی جای طراحان SolidWorks را می‌گیرد؟</h2>
+
+<p>
+در حال حاضر ابزارهای طراحی مولد
+(Generative Design)
+می‌توانند بر اساس محدودیت‌های تعیین‌شده
+ده‌ها یا حتی صدها طرح اولیه تولید کنند.
+این موضوع باعث شده برخی افراد تصور کنند
+طراحان CAD در آینده حذف خواهند شد.
+</p>
+
+<p>
+اما واقعیت پیچیده‌تر از این است.
+هوش مصنوعی می‌تواند مدل بسازد،
+ولی هنوز نمی‌تواند به تنهایی هدف واقعی پروژه،
+نیاز مشتری،
+محدودیت‌های تولید،
+بودجه،
+ریسک‌های فنی
+و شرایط بازار را به شکل انسانی درک کند.
+</p>
+
+<h3>بخش‌هایی که احتمال خودکار شدن دارند:</h3>
+
+<ul>
+<li>مدل‌سازی قطعات ساده</li>
+<li>تهیه نقشه‌های تکراری</li>
+<li>تحلیل‌های اولیه</li>
+<li>بهینه‌سازی هندسی خودکار</li>
+<li>ساخت مدل‌های سه‌بعدی استاندارد</li>
+</ul>
+
+<h3>بخش‌هایی که همچنان انسانی خواهند ماند:</h3>
+
+<ul>
+<li>تعریف مسئله طراحی</li>
+<li>خلاقیت مهندسی</li>
+<li>تصمیم‌گیری نهایی</li>
+<li>بررسی اقتصادی محصول</li>
+<li>ارتباط با مشتری و تیم تولید</li>
+<li>مدیریت پروژه</li>
+<li>نوآوری و توسعه محصول جدید</li>
+</ul>
+
 </div>
 
-<div class="form-group">
-<label>کد ملی</label>
-<input type="number" id="nationalId" required>
+<div class="card">
+<h2>برای یک دانشجوی ساخت و تولید چه مهارت‌هایی ارزشمندتر می‌شوند؟</h2>
+
+<ul>
+<li>SolidWorks پیشرفته</li>
+<li>طراحی برای ساخت (DFM)</li>
+<li>برنامه‌نویسی CNC</li>
+<li>CAD/CAM</li>
+<li>رباتیک صنعتی</li>
+<li>بینایی ماشین</li>
+<li>تحلیل داده‌های تولید</li>
+<li>اتوماسیون صنعتی</li>
+<li>هوش مصنوعی در صنعت</li>
+<li>مدیریت پروژه‌های صنعتی</li>
+</ul>
+
+<p>
+ترکیب این مهارت‌ها با دانش مکانیک باعث می‌شود
+فرد نه تنها از هوش مصنوعی آسیب نبیند،
+بلکه از آن به عنوان یک ابزار قدرتمند استفاده کند.
+</p>
+
 </div>
 
-<button type="submit" class="btn primary">
-ارسال ثبت‌نام
-</button>
+<div class="card">
+<h2>جمع‌بندی</h2>
 
-</form>
+<p>
+برخلاف تصور رایج،
+هوش مصنوعی احتمالاً تمام مشاغل را حذف نخواهد کرد.
+آنچه از بین می‌رود بیشتر وظایف تکراری و قابل پیش‌بینی است.
+افرادی که تنها یک کار مشخص و تکراری انجام می‌دهند
+بیشترین خطر را احساس خواهند کرد.
+</p>
 
-<div class="success" id="successMessage">
-ثبت‌نام با موفقیت به تلگرام ارسال شد ✅
+<p>
+در مقابل،
+مهندسانی که توانایی حل مسئله،
+تصمیم‌گیری،
+مدیریت پروژه،
+خلاقیت و کار با فناوری‌های جدید را دارند
+در آینده ارزش بیشتری پیدا خواهند کرد.
+</p>
+
+<p>
+در حوزه مهندسی ساخت و تولید نیز
+هوش مصنوعی جایگزین کامل مهندس نخواهد شد،
+بلکه به ابزار اصلی او تبدیل می‌شود.
+بنابراین در دهه‌های آینده
+رقابت اصلی میان «انسان و هوش مصنوعی» نیست،
+بلکه میان «مهندسی که از هوش مصنوعی استفاده می‌کند»
+و «مهندسی که از آن استفاده نمی‌کند» خواهد بود.
+</p>
+
 </div>
 
-<div class="error" id="errorMessage">
-ارسال انجام نشد ❌
-</div>
+<div class="card">
+<h2>منابع</h2>
+
+<ul>
+<li>World Economic Forum – Future of Jobs Report</li>
+<li>Stanford AI Index Report</li>
+<li>McKinsey Global Institute Reports</li>
+<li>OECD Employment Outlook</li>
+<li>MIT Technology Review</li>
+<li>Dassault Systèmes – SolidWorks Documentation</li>
+<li>NVIDIA Generative Design Resources</li>
+</ul>
 
 </div>
 
 </div>
 
 <footer>
-© انجمن علمی ساخت و تولید | دانشگاه محقق اردبیلی
+طراحی شده با HTML و CSS خالص
 </footer>
-
-<script>
-
-function openRules(){
-document.getElementById("rulesModal").style.display="flex";
-}
-
-function closeRules(){
-document.getElementById("rulesModal").style.display="none";
-}
-
-function openRegister(){
-document.getElementById("registerModal").style.display="flex";
-}
-
-window.onclick = function(event){
-
-let rules = document.getElementById("rulesModal");
-let register = document.getElementById("registerModal");
-
-if(event.target == rules){
-rules.style.display="none";
-}
-
-if(event.target == register){
-register.style.display="none";
-}
-
-}
-
-document.getElementById("registerForm")
-.addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-let fullname =
-document.getElementById("fullname").value;
-
-let studentId =
-document.getElementById("studentId").value;
-
-let nationalId =
-document.getElementById("nationalId").value;
-
-let message = `
-📌 ثبت‌نام جدید مسابقه SolidWorks
-
-👤 نام:
-${fullname}
-
-🎓 شماره دانشجویی:
-${studentId}
-
-🆔 کد ملی:
-${nationalId}
-`;
-
-try {
-
-const response = await fetch(
-"https://api.telegram.org/bot8815073906:AAFvmDlrMyjXI410uC6jiC5i2SYkQw1sEcE/sendMessage",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-chat_id:"5469088884",
-text:message
-})
-}
-);
-
-if(response.ok){
-
-document.getElementById("successMessage")
-.style.display="block";
-
-document.getElementById("errorMessage")
-.style.display="none";
-
-document.getElementById("registerForm")
-.reset();
-
-}
-
-else {
-
-document.getElementById("errorMessage")
-.style.display="block";
-
-}
-
-}
-
-catch(error){
-
-document.getElementById("errorMessage")
-.style.display="block";
-
-}
-
-});
-
-</script>
 
 </body>
 </html>
